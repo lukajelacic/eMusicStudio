@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:vm="clr-namespace:eMuzickiStudio.Mobile.ViewModels"
+             x:Class="eMuzickiStudio.Mobile.Views.RezervacijaPage">
+    <!--<ContentPage.BindingContext>
+        <vm:RezervacijaViewModel></vm:RezervacijaViewModel>
+    </ContentPage.BindingContext>-->
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Trenutna rezervacija"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <ListView ItemsSource="{Binding RezervacijaList}"  >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" Orientation="Horizontal">
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding MuzickaOprema.Naziv,StringFormat='Naziv: {0}'}" 
+                                       LineBreakMode="NoWrap" 
+                                       Style="{DynamicResource ListItemTextStyle}" 
+                                       FontSize="16" />
+                                    <Label Text="{Binding MuzickaOprema.Cijena,StringFormat='Cijena: {0:C}'}" 
+                                       LineBreakMode="NoWrap"
+                                       Style="{DynamicResource ListItemDetailTextStyle}"
+                                       FontSize="16" />
+                                    <Label Text="{Binding Kolicina,StringFormat='Kolicina: {0}'}" 
+                                       LineBreakMode="NoWrap"
+                                       Style="{DynamicResource ListItemDetailTextStyle}"
+                                       FontSize="16" />
+                                </StackLayout>
+                                <StackLayout>
+                                    <Button  Text="+1" Command="{Binding PovecajKolicinuCommand}"></Button>
+                                    <Button Text="-1" Command="{Binding SmanjiKolicinuCommand}"></Button>
+                                    <Button Text="Izbrisi" Clicked="Button_Clicked" ></Button>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout>
+                <DatePicker MinimumDate="{Binding trenutno}" Date="{Binding DatumRezervacije}" Format="yyyy-MM-dd"></DatePicker>
+                <Button Text="Zakljuci rezervaciju"  Command="{Binding ZakljuciRezervacijuCommand}"></Button>
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

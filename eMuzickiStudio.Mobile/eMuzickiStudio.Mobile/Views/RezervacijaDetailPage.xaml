@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eMuzickiStudio.Mobile.Views.RezervacijaDetailPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding Rezervacija.BrojRezervacije,StringFormat='Broj rezervacije: {0}'}" />
+            <ListView ItemsSource="{Binding RezervacijaStavkeList}"  >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" Orientation="Horizontal">
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding MuzickaOprema,StringFormat='Muzicka oprema: {0}'}" 
+                                       LineBreakMode="NoWrap" 
+                                       Style="{DynamicResource ListItemTextStyle}" 
+                                       FontSize="16" />
+                                    <Label Text="{Binding Kolicina,StringFormat='Kolicina: {0}'}" 
+                                       LineBreakMode="NoWrap"
+                                       Style="{DynamicResource ListItemDetailTextStyle}"
+                                       FontSize="16" />
+                                    <Label Text="{Binding Cijena,StringFormat='Cijena: {0:C}'}" 
+                                       LineBreakMode="NoWrap"
+                                       Style="{DynamicResource ListItemDetailTextStyle}"
+                                       FontSize="16" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout>
+                <Label x:Name="Cijena" Text="{Binding Cijena,StringFormat='Ukupno : {0}'}"></Label>
+                <Button x:Name="Otkazi" Text="Otkazi rezervaciju" Command="{Binding OtkaziRezervacijuCommand}"></Button>
+                <Button x:Name="Naplati" Text="Naplati rezervaciju" Command="{Binding NaplatiRezervacijuCommand}"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

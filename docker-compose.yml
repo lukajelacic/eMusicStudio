@@ -1,0 +1,33 @@
+version: '3'
+services:
+#mssql docker
+  emuzickistudio-sql:
+    image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+    restart: unless-stopped
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=QWElkj132!
+      - MSSQL_PID=Developer
+    ports:
+      - 1401:1433
+    networks:
+      - emuzickistudionet
+
+  emuzickistudio-api:
+    restart: unless-stopped
+    build:
+      context: .
+    environment:
+      - ConnectionStrings:eMuzickiStudio=Server=emuzickistudio-sql,1433;Database=eMusicStudioDocker;User=sa;Password=QWElkj132!;ConnectRetryCount=250
+    ports:
+      - 50997:80
+    networks:
+      - emuzickistudionet
+    links:
+      - emuzickistudio-sql
+    depends_on:
+      - emuzickistudio-sql
+      
+networks:
+  emuzickistudionet:
+    driver: bridge   

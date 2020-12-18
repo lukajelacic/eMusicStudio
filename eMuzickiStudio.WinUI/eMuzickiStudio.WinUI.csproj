@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0205D821-C969-4B05-8B84-E7ABFE863124}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>eMuzickiStudio.WinUI</RootNamespace>
+    <AssemblyName>eMuzickiStudio.WinUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Flurl, Version=2.8.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Flurl.2.8.1\lib\net40\Flurl.dll</HintPath>
+    </Reference>
+    <Reference Include="Flurl.Http, Version=2.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Flurl.Http.2.4.1\lib\net46\Flurl.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="APIService.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIndex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIndex.Designer.cs">
+      <DependentUpon>frmIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global.cs" />
+    <Compile Include="Klijenti\frmKlijenti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Klijenti\frmKlijenti.Designer.cs">
+      <DependentUpon>frmKlijenti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Klijenti\frmKlijentiDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Klijenti\frmKlijentiDetalji.Designer.cs">
+      <DependentUpon>frmKlijentiDetalji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Korisnici\frmKorisnici.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Korisnici\frmKorisnici.Designer.cs">
+      <DependentUpon>frmKorisnici.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Korisnici\frmKorisniciDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Korisnici\frmKorisniciDetalji.Designer.cs">
+      <DependentUpon>frmKorisniciDetalji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MuzickaOprema\frmMuzickaOprema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MuzickaOprema\frmMuzickaOprema.Designer.cs">
+      <DependentUpon>frmMuzickaOprema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MuzickaOprema\frmPovecajKolicinu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MuzickaOprema\frmPovecajKolicinu.Designer.cs">
+      <DependentUpon>frmPovecajKolicinu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\KlijentiRezervacijeReportViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\KlijentiRezervacijeReportViewForm.Designer.cs">
+      <DependentUpon>KlijentiRezervacijeReportViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportViewForm.Designer.cs">
+      <DependentUpon>ReportViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RezervacijePoDatumuReportViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\RezervacijePoDatumuReportViewForm.Designer.cs">
+      <DependentUpon>RezervacijePoDatumuReportViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rezervacije\frmIspisSlobodnihTermina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rezervacije\frmIspisSlobodnihTermina.Designer.cs">
+      <DependentUpon>frmIspisSlobodnihTermina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rezervacije\frmPregledRezervacija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rezervacije\frmPregledRezervacija.Designer.cs">
+      <DependentUpon>frmPregledRezervacija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rezervacije\frmRezervacije.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rezervacije\frmRezervacije.Designer.cs">
+      <DependentUpon>frmRezervacije.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rezervacije\frmRezervacijeDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rezervacije\frmRezervacijeDetalji.Designer.cs">
+      <DependentUpon>frmRezervacijeDetalji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rezervacije\frmRezervacijeKlijenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rezervacije\frmRezervacijeKlijenta.Designer.cs">
+      <DependentUpon>frmRezervacijeKlijenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rezervacije\frmSlobodniTermini.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rezervacije\frmSlobodniTermini.Designer.cs">
+      <DependentUpon>frmSlobodniTermini.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="frmIndex.resx">
+      <DependentUpon>frmIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Klijenti\frmKlijenti.resx">
+      <DependentUpon>frmKlijenti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Klijenti\frmKlijentiDetalji.resx">
+      <DependentUpon>frmKlijentiDetalji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Korisnici\frmKorisnici.resx">
+      <DependentUpon>frmKorisnici.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Korisnici\frmKorisniciDetalji.resx">
+      <DependentUpon>frmKorisniciDetalji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MuzickaOprema\frmMuzickaOprema.resx">
+      <DependentUpon>frmMuzickaOprema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MuzickaOprema\frmPovecajKolicinu.resx">
+      <DependentUpon>frmPovecajKolicinu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reports\KlijentiRezervacijeReport.rdlc" />
+    <EmbeddedResource Include="Reports\KlijentiRezervacijeReportViewForm.resx">
+      <DependentUpon>KlijentiRezervacijeReportViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportViewForm.resx">
+      <DependentUpon>ReportViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RezervacijePoDatumu.rdlc" />
+    <EmbeddedResource Include="Reports\RezervacijePoDatumuReportViewForm.resx">
+      <DependentUpon>RezervacijePoDatumuReportViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RezervacijeStavkeReport.rdlc" />
+    <EmbeddedResource Include="Rezervacije\frmIspisSlobodnihTermina.resx">
+      <DependentUpon>frmIspisSlobodnihTermina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rezervacije\frmPregledRezervacija.resx">
+      <DependentUpon>frmPregledRezervacija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rezervacije\frmRezervacije.resx">
+      <DependentUpon>frmRezervacije.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rezervacije\frmRezervacijeDetalji.resx">
+      <DependentUpon>frmRezervacijeDetalji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rezervacije\frmRezervacijeKlijenta.resx">
+      <DependentUpon>frmRezervacijeKlijenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rezervacije\frmSlobodniTermini.resx">
+      <DependentUpon>frmSlobodniTermini.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\eMuzickiStudio.Model.Klijenti.datasource" />
+    <None Include="Properties\DataSources\eMuzickiStudio.Model.MuzickaOprema.datasource" />
+    <None Include="Properties\DataSources\eMuzickiStudio.Model.Requests.RezervacijaRezultat.datasource" />
+    <None Include="Properties\DataSources\eMuzickiStudio.Model.Rezervacija.datasource" />
+    <None Include="Properties\DataSources\eMuzickiStudio.Model.RezervacijaStavkeRezultat.datasource" />
+    <None Include="Properties\DataSources\eMuzickiStudio.Model.Termini.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\eMuzickiStudio.Model\eMuzickiStudio.Model.csproj">
+      <Project>{eabc0dda-6f3a-450f-a743-36be5d8f7dff}</Project>
+      <Name>eMuzickiStudio.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

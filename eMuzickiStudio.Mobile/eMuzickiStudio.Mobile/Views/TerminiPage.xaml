@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:vm="clr-namespace:eMuzickiStudio.Mobile.ViewModels"
+             x:Class="eMuzickiStudio.Mobile.Views.TerminiPage">
+    <ContentPage.BindingContext>
+        <vm:TerminiViewModel></vm:TerminiViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Slobodni termini"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <DatePicker MinimumDate="{Binding trenutno}" x:Name="DatePicker"  DateSelected="DatePicker_DateSelected" Format="yyyy-MM-dd"></DatePicker>
+            <ListView ItemsSource="{Binding TerminiList}" ItemSelected="ListView_ItemSelected" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" Orientation="Horizontal">
+                                    <Label Text="{Binding Datum,StringFormat='{0:MMMM dd, yyyy}'}" 
+                                       LineBreakMode="NoWrap" 
+                                       Style="{DynamicResource ListItemTextStyle}" 
+                                       FontSize="16" />
+                                    <Label Text="{Binding VrijemeOd,StringFormat='{}{0:hh}:{0:mm}'}" 
+                                       LineBreakMode="NoWrap"
+                                       Style="{DynamicResource ListItemDetailTextStyle}"
+                                       FontSize="16" />
+                                    <Label Text="{Binding VrijemeDo,StringFormat='{}{0:hh}:{0:mm}'}" 
+                                       LineBreakMode="NoWrap"
+                                       Style="{DynamicResource ListItemDetailTextStyle}"
+                                       FontSize="16" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

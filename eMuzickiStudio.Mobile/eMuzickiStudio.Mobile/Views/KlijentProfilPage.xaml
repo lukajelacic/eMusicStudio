@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:vm="clr-namespace:eMuzickiStudio.Mobile.ViewModels" xmlns:local="clr-namespace:eMuzickiStudio.Mobile.Converters"
+             x:Class="eMuzickiStudio.Mobile.Views.KlijentProfilPageg">
+    <ContentPage.BindingContext>
+        <vm:KlijentProfilViewModel></vm:KlijentProfilViewModel>
+    </ContentPage.BindingContext>
+    
+   
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <Label Text="Vas profil" />
+                <Label Text="{Binding Ime,StringFormat='Ime: {0}'}"></Label>
+                <Label Text="{Binding Prezime,StringFormat='Prezime: {0}'}"></Label>
+                <Label Text="{Binding Telefon,StringFormat='Telefon: {0}'}"></Label>
+                <Label Text="{Binding Email,StringFormat='Email: {0}'}"></Label>
+                <Label Text="{Binding KorisnickoIme,StringFormat='Korisnicko ime: {0}'}" ></Label>
+            <StackLayout>
+                <Button Text="Promjeni password" BackgroundColor="Gray" BorderColor="LightBlue" BorderWidth="1" Clicked="Button_Clicked"></Button>
+                <Button Text="Promjeni korisnicke podatke" BackgroundColor="Gray" BorderColor="LightBlue" BorderWidth="1" Clicked="Button_Clicked_1"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
