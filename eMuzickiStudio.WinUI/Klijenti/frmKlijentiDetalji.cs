@@ -89,10 +89,7 @@ namespace eMuzickiStudio.WinUI.Klijenti
                 txtKorisnickoIme.ReadOnly = true;
                 cmbGrad.SelectedIndex = klijent.GradId;
                 cmbGrad.Enabled = false;
-                //txtPassword.ReadOnly = true;
-                //txtPassword.Enabled = false;
-                //txtPasswordConfirmation.ReadOnly = true;
-                //txtPasswordConfirmation.Enabled = false;
+                
                 txtPassword.Visible = false;
                 txtPasswordConfirmation.Visible = false;
                 lblLozinka.Visible = false;
@@ -325,7 +322,7 @@ namespace eMuzickiStudio.WinUI.Klijenti
             var klijent = await _klijenti.GetKlijenta<Model.Requests.KlijentBanovanRequest>(_id);
             klijent.Banovan = true;
             await _klijenti.UpdateBanovan<Model.Klijenti>(klijent.KlijentId, klijent);
-            MessageBox.Show("Klijent je uspjesno banovan");
+            MessageBox.Show("Klijent je uspjesno banovan.");
             this.Close();
         }
     }

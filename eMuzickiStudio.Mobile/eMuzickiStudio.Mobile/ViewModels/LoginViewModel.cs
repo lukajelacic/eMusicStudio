@@ -37,18 +37,19 @@ namespace eMuzickiStudio.Mobile.ViewModels
             APIService.Username = Username;
             APIService.Password = Password;
             APIService.Context = "Klijenti";
-            List<Model.Klijenti> klijenti = await _service.Get<List<Model.Klijenti>>(new KlijentiSearchRequest()
-            {
-                KorisnickoIme = APIService.Username
-            });
-            var klijent = klijenti[0];
-            if (klijent.Banovan == true)
-            {
-                await Application.Current.MainPage.DisplayAlert("Vas profil je banovan", "Kontaktirajte muzicki studio da dobijete razlog bana.","Ok");
-                return;
-            }
+            
             try
             {
+                List<Model.Klijenti> klijenti = await _service.Get<List<Model.Klijenti>>(new KlijentiSearchRequest()
+                {
+                    KorisnickoIme = APIService.Username
+                });
+                var klijent = klijenti[0];
+                if (klijent.Banovan == true)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Vas profil je banovan", "Kontaktirajte muzicki studio da dobijete razlog bana.", "Ok");
+                    return;
+                }
                 var response = await _service.Get<dynamic>(null);
                 Application.Current.MainPage = new MainPage();
                 //await _service.Get<dynamic>(null);
