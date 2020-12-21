@@ -58,11 +58,30 @@ namespace eMuzickiStudio.WinUI.Korisnici
             {
                 var korisnik = await _korisnici.GetById<Model.Korisnici>(_id);
                 txtIme.Text = korisnik.Ime;
+                txtIme.ReadOnly = true;
+
                 txtPrezime.Text = korisnik.Prezime;
+                txtPrezime.ReadOnly = true;
+
                 txtPhone.Text = korisnik.Telefon;
+                txtPhone.ReadOnly = true;
+
                 txtEmail.Text = korisnik.Email;
+                txtEmail.ReadOnly = true;
+
                 txtKorisnickoIme.Text = korisnik.KorisnickoIme;
+                txtKorisnickoIme.ReadOnly = true;
+
                 cmbUloga.SelectedIndex = korisnik.UlogaId;
+                cmbUloga.Enabled = false;
+
+                txtPassword.Visible = false;
+                label6.Visible = false;
+
+                txtPasswordConfirmation.Visible = false;
+                label7.Visible = false;
+
+                btnSnimi.Visible = false;
                 //btnIzbrisi.Visible = true;
             }
             //else
