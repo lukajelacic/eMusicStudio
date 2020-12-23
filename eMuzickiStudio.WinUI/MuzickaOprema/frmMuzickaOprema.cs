@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -123,12 +124,22 @@ namespace eMuzickiStudio.WinUI.MuzickaOprema
                 errorProvider1.SetError(txtNaziv, null);
             }
         }
-
+        string regexNumber = @"[0-9]{1,2}";
         private void txtBrojNaStanju_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtBrojNaStanju.Text))
             {
                 errorProvider1.SetError(txtBrojNaStanju, Properties.Resources.Validation_RequiredField);
+                e.Cancel = true;
+            }
+            else if (!Regex.IsMatch(txtBrojNaStanju.Text, regexNumber))
+            {
+                errorProvider1.SetError(txtBrojNaStanju, "Broj na stanju mora biti numericka vrijednost.");
+                e.Cancel = true;
+            }
+            else if (int.Parse(txtBrojNaStanju.Text) < 0 || int.Parse(txtBrojNaStanju.Text) > 50)
+            {
+                errorProvider1.SetError(txtBrojNaStanju, "Broj na stanju mora imati vrijednost izmedju 1 i 50.");
                 e.Cancel = true;
             }
             else
@@ -142,6 +153,11 @@ namespace eMuzickiStudio.WinUI.MuzickaOprema
             if (string.IsNullOrWhiteSpace(txtCijena.Text))
             {
                 errorProvider1.SetError(txtCijena, Properties.Resources.Validation_RequiredField);
+                e.Cancel = true;
+            }
+            else if (!Regex.IsMatch(txtCijena.Text, regexNumber) || int.Parse(txtCijena.Text) < 10)
+            {
+                errorProvider1.SetError(txtCijena, "Minimalna cijena je 10.");
                 e.Cancel = true;
             }
             else
