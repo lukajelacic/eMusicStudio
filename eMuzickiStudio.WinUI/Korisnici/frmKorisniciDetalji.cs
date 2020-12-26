@@ -151,11 +151,23 @@ namespace eMuzickiStudio.WinUI.Korisnici
             }
         }
 
-        private void txtKorisnickoIme_Validating_1(object sender, CancelEventArgs e)
+        private async void txtKorisnickoIme_Validating_1(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtKorisnickoIme.Text) && txtKorisnickoIme.Text.Length < 4)
             {
                 errorProvider1.SetError(txtKorisnickoIme, Properties.Resources.Validation_RequiredField);
+                e.Cancel = true;
+            }
+            var lista = await _korisnici.Get<List<Model.Korisnici>>(null);
+            bool pronadjen = false;
+            foreach(var item in lista)
+            {
+                if (item.KorisnickoIme == txtKorisnickoIme.Text)
+                    pronadjen = true;
+            }
+            if (pronadjen == true)
+            {
+                errorProvider1.SetError(txtKorisnickoIme, "Korisnicko ime je zauzeto.");
                 e.Cancel = true;
             }
             else
