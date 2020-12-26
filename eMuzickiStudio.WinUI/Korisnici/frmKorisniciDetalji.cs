@@ -164,9 +164,41 @@ namespace eMuzickiStudio.WinUI.Korisnici
             }
         }
 
+       
+
+        
+
+        private void cmbUloga_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(cmbUloga.Text))
+            {
+                errorProvider1.SetError(cmbUloga, Properties.Resources.Validation_RequiredField);
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider1.SetError(cmbUloga, null);
+            }
+        }
+
+       
+
+        private void txtPhone_Validating(object sender, CancelEventArgs e)
+        {
+            if (!txtPhone.MaskCompleted)
+            {
+                errorProvider1.SetError(txtPhone, Properties.Resources.Validation_RequiredField);
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider1.SetError(txtPhone, null);
+            }
+        }
+
         private void txtPassword_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtPassword.Text)) 
+            if (string.IsNullOrWhiteSpace(txtPassword.Text))
             {
                 errorProvider1.SetError(txtPassword, Properties.Resources.Validation_RequiredField);
                 e.Cancel = true;
@@ -214,36 +246,6 @@ namespace eMuzickiStudio.WinUI.Korisnici
                 errorProvider1.SetError(txtPasswordConfirmation, null);
                 e.Cancel = false;
 
-            }
-        }
-
-        
-
-        private void cmbUloga_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrEmpty(cmbUloga.Text))
-            {
-                errorProvider1.SetError(cmbUloga, Properties.Resources.Validation_RequiredField);
-                e.Cancel = true;
-            }
-            else
-            {
-                errorProvider1.SetError(cmbUloga, null);
-            }
-        }
-
-       
-
-        private void txtPhone_Validating(object sender, CancelEventArgs e)
-        {
-            if (!txtPhone.MaskCompleted)
-            {
-                errorProvider1.SetError(txtPhone, Properties.Resources.Validation_RequiredField);
-                e.Cancel = true;
-            }
-            else
-            {
-                errorProvider1.SetError(txtPhone, null);
             }
         }
     }
