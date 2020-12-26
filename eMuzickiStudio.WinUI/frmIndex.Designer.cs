@@ -44,7 +44,6 @@
             this.slobodniTerminiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaSlobodnihTerminaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pregledRezervacijaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,8 +54,7 @@
             this.korisniciToolStripMenuItem,
             this.klijentiToolStripMenuItem,
             this.muzickaOpremaToolStripMenuItem,
-            this.rezervacijeToolStripMenuItem,
-            this.logoutToolStripMenuItem});
+            this.rezervacijeToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(843, 28);
@@ -75,14 +73,14 @@
             // pretragaToolStripMenuItem2
             // 
             this.pretragaToolStripMenuItem2.Name = "pretragaToolStripMenuItem2";
-            this.pretragaToolStripMenuItem2.Size = new System.Drawing.Size(177, 26);
+            this.pretragaToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
             this.pretragaToolStripMenuItem2.Text = "Pretraga";
             this.pretragaToolStripMenuItem2.Click += new System.EventHandler(this.pretragaToolStripMenuItem2_Click);
             // 
             // noviKorisnikToolStripMenuItem
             // 
             this.noviKorisnikToolStripMenuItem.Name = "noviKorisnikToolStripMenuItem";
-            this.noviKorisnikToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
+            this.noviKorisnikToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.noviKorisnikToolStripMenuItem.Text = "Novi korisnik";
             this.noviKorisnikToolStripMenuItem.Click += new System.EventHandler(this.noviKorisnikToolStripMenuItem_Click);
             // 
@@ -163,13 +161,6 @@
             this.pregledRezervacijaToolStripMenuItem.Text = "Pregled rezervacija";
             this.pregledRezervacijaToolStripMenuItem.Click += new System.EventHandler(this.pregledRezervacijaToolStripMenuItem_Click);
             // 
-            // logoutToolStripMenuItem
-            // 
-            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
-            this.logoutToolStripMenuItem.Text = "Logout";
-            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
-            // 
             // frmIndex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -205,7 +196,6 @@
         private System.Windows.Forms.ToolStripMenuItem slobodniTerminiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaSlobodnihTerminaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pregledRezervacijaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
     }
 }
 
