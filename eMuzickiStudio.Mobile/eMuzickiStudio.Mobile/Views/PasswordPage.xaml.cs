@@ -39,7 +39,7 @@ namespace eMuzickiStudio.Mobile.Views
             }
             else if (NewPassword.Text.Length < 4)
             {
-                await Application.Current.MainPage.DisplayAlert("Greska", "Password mora imati minimalno 5 karaktera", "OK");
+                await Application.Current.MainPage.DisplayAlert("Greska", "Password mora imati minimalno 4 karaktera", "OK");
             }
             else if (NewPassword.Text != ConfirmPassword.Text)
             {

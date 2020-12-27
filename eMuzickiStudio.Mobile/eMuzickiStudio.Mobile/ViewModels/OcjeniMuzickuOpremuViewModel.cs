@@ -31,6 +31,7 @@ namespace eMuzickiStudio.Mobile.ViewModels
             };
             var klijenti = await _klijenti.Get<List<Model.Klijenti>>(search);
             var klijent = klijenti[0];
+           
             if (Ocjena < 1 || Ocjena > 5)
             {
                 await Application.Current.MainPage.DisplayAlert("Greska", "Ocjena mora imati vrijednost izmedju 1 i 5.", "OK");

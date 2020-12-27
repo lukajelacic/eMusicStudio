@@ -24,7 +24,7 @@
             </StackLayout>
             <StackLayout>
                 <Label Text="Ocjenite izabranu opremu:"></Label>
-                <Entry Text="{Binding Ocjena}"></Entry>
+                <Entry Text="{Binding Ocjena}" Keyboard="Numeric"></Entry>
                 <Button Text="Ocjeni" Command="{Binding OcjeniCommand}"></Button>
             </StackLayout>
         </StackLayout>
