@@ -129,6 +129,28 @@ namespace eMuzickiStudio.Mobile.ViewModels
 
         public  DelegateCommand SubmitCommand => new DelegateCommand(async () =>
         {
+            //int expirationMonth;
+            //int expirationYear;
+            bool isNumber = int.TryParse(ExpMonth, out int expirationMonth);
+            bool isNumber2 = int.TryParse(ExpYear, out int expirationYear);
+            if (isNumber)
+            {
+                CreditCardModel.ExpMonth = expirationMonth;
+            }
+            else
+            {
+                UserDialogs.Instance.Alert("Unesite ispravnu vrijednost mjeseca.");
+                return;
+            }
+            if (isNumber2)
+            {
+                CreditCardModel.ExpYear = expirationYear;
+            }
+            else
+            {
+                UserDialogs.Instance.Alert("Unesite ispravnu vrijednost godine.");
+                return;
+            }
             CreditCardModel.ExpMonth = Convert.ToInt64(ExpMonth);
             CreditCardModel.ExpYear = Convert.ToInt64(ExpYear);
             CancellationTokenSource tokenSource = new CancellationTokenSource();

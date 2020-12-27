@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -62,7 +63,24 @@ namespace eMuzickiStudio.WinUI.MuzickaOprema
             MessageBox.Show("Povecan broj dostupnih " + oprema.Naziv + " na stanju.");
             this.Close();
         }
-
-       
+        string regexNumber = @"[1-10]";
+        private void txtKolicina_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtKolicina.Text))
+            {
+                errorProvider1.SetError(txtKolicina, Properties.Resources.Validation_RequiredField);
+                e.Cancel = true;
+            }
+            else if (!Regex.IsMatch(txtKolicina.Text, regexNumber))
+            {
+                errorProvider1.SetError(txtKolicina, "Kolicina mora biti broj izmedju 1 i 10.");
+                e.Cancel = true;
+            }
+            
+            else
+            {
+                errorProvider1.SetError(txtKolicina, null);
+            }
+        }
     }
 }

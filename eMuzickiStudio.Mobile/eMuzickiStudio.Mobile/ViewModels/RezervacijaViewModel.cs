@@ -61,6 +61,11 @@ namespace eMuzickiStudio.Mobile.ViewModels
                 await Application.Current.MainPage.DisplayAlert("Greska", "Niste izabrali nijedan muzicki instrument.", "OK");
                 return;
             }
+            if (DatumRezervacije.Date < DateTime.Now.Date)
+            {
+                await Application.Current.MainPage.DisplayAlert("Greska", "Datum rezervacije ne moze biti manji od danasnjeg.", "OK");
+                return;
+            }
             int cijena = 0;
             var list = await _rezervacije.Get<List<Model.Rezervacija>>(null);
             int brojRezervacije;

@@ -42,6 +42,7 @@ namespace eMuzickiStudio.Mobile.ViewModels
         public ICommand InitCommand { get; set; }
         public async Task Init()
         {
+            MuzickaOpremaList.Clear();
             var list = await _preporuceniProizvodi.Get<List<Model.MuzickaOprema>>(MuzickaOprema.MuzickaOpremaId);
             foreach(var item in list)
             {

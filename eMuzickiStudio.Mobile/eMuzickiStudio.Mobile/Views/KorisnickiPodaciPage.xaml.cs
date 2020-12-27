@@ -36,7 +36,7 @@ namespace eMuzickiStudio.Mobile.Views
             }
             if (!Regex.IsMatch(Telefon.Text, @"(06[0-9])([0-9]){3}([0-9]){3}$"))
             {
-                await Application.Current.MainPage.DisplayAlert("Greška", "Broj telefona mora biti u formatu: 06X/XXX-XXX", "Ok");
+                await Application.Current.MainPage.DisplayAlert("Greška", "Broj telefona mora biti u formatu: 06XXXXXXX", "Ok");
                 return;
             }
             if (Telefon.Text.Length < 9)
