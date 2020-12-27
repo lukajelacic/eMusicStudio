@@ -36,12 +36,13 @@
             this.txtNaStanju = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnPovecaj = new System.Windows.Forms.Button();
-            this.txtKolicina = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtKolicina = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKolicina)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -102,14 +103,6 @@
             this.btnPovecaj.UseVisualStyleBackColor = true;
             this.btnPovecaj.Click += new System.EventHandler(this.btnPovecaj_Click);
             // 
-            // txtKolicina
-            // 
-            this.txtKolicina.Location = new System.Drawing.Point(101, 178);
-            this.txtKolicina.Name = "txtKolicina";
-            this.txtKolicina.Size = new System.Drawing.Size(178, 22);
-            this.txtKolicina.TabIndex = 8;
-            this.txtKolicina.Validating += new System.ComponentModel.CancelEventHandler(this.txtKolicina_Validating);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -131,13 +124,36 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // txtKolicina
+            // 
+            this.txtKolicina.Location = new System.Drawing.Point(101, 178);
+            this.txtKolicina.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.txtKolicina.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtKolicina.Name = "txtKolicina";
+            this.txtKolicina.Size = new System.Drawing.Size(178, 22);
+            this.txtKolicina.TabIndex = 10;
+            this.txtKolicina.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtKolicina.Validating += new System.ComponentModel.CancelEventHandler(this.txtKolicina_Validating_1);
+            // 
             // frmPovecajKolicinu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 290);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtKolicina);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnPovecaj);
             this.Controls.Add(this.txtNaStanju);
@@ -151,6 +167,7 @@
             this.Load += new System.EventHandler(this.frmPovecajKolicinu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKolicina)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,9 +182,9 @@
         private System.Windows.Forms.TextBox txtNaStanju;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnPovecaj;
-        private System.Windows.Forms.TextBox txtKolicina;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.NumericUpDown txtKolicina;
     }
 }

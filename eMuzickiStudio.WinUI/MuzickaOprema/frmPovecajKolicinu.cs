@@ -53,7 +53,7 @@ namespace eMuzickiStudio.WinUI.MuzickaOprema
         private async void btnPovecaj_Click(object sender, EventArgs e)
         {
             var oprema = await _muzickaOprema.GetById<Model.MuzickaOprema>(_id);
-            oprema.NaStanju += int.Parse(txtKolicina.Text);
+            oprema.NaStanju += Convert.ToInt32(txtKolicina.Value);
             if(oprema.NaStanju > 50)
             {
                 MessageBox.Show("Na stanju moze biti najvise 50 instrumenata iste vrste!");
@@ -63,20 +63,33 @@ namespace eMuzickiStudio.WinUI.MuzickaOprema
             MessageBox.Show("Povecan broj dostupnih " + oprema.Naziv + " na stanju.");
             this.Close();
         }
-        string regexNumber = @"[1-10]";
-        private void txtKolicina_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtKolicina.Text))
-            {
-                errorProvider1.SetError(txtKolicina, Properties.Resources.Validation_RequiredField);
-                e.Cancel = true;
-            }
-            else if (!Regex.IsMatch(txtKolicina.Text, regexNumber))
-            {
-                errorProvider1.SetError(txtKolicina, "Kolicina mora biti broj izmedju 1 i 10.");
-                e.Cancel = true;
-            }
+        //string regexNumber = @"[1-10]";
+        //private void txtKolicina_Validating(object sender, CancelEventArgs e)
+        //{
+        //    if (string.IsNullOrWhiteSpace(txtKolicina.Text))
+        //    {
+        //        errorProvider1.SetError(txtKolicina, Properties.Resources.Validation_RequiredField);
+        //        e.Cancel = true;
+        //    }
+        //    else if (!Regex.IsMatch(txtKolicina.Text, regexNumber))
+        //    {
+        //        errorProvider1.SetError(txtKolicina, "Kolicina mora biti broj izmedju 1 i 10.");
+        //        e.Cancel = true;
+        //    }
             
+        //    else
+        //    {
+        //        errorProvider1.SetError(txtKolicina, null);
+        //    }
+        //}
+
+        private void txtKolicina_Validating_1(object sender, CancelEventArgs e)
+        {
+            if (txtKolicina.Value < 1 || txtKolicina.Value>50)
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(txtKolicina, "Kolicina mora imati vrijednost izmedju 1 i 50.");
+            }
             else
             {
                 errorProvider1.SetError(txtKolicina, null);

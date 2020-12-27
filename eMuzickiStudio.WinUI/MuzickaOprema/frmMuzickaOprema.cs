@@ -179,6 +179,30 @@ namespace eMuzickiStudio.WinUI.MuzickaOprema
             }
         }
 
-       
+        private void txtBrojNaStanju_Validating_1(object sender, CancelEventArgs e)
+        {
+            if (txtBrojNaStanju.Value <1 || txtBrojNaStanju.Value>50)
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(txtBrojNaStanju, "Broj na stanju mora imati vrijednost izmedju 1 i 50.");
+            }
+            else
+            {
+                errorProvider1.SetError(txtBrojNaStanju, null);
+            }
+        }
+
+        private void txtCijena_Validating_1(object sender, CancelEventArgs e)
+        {
+            if (txtCijena.Value < 1 || txtCijena.Value>500)
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(txtCijena, "Cijena mora imati vrijednost izmedju 1 i 500.");
+            }
+            else
+            {
+                errorProvider1.SetError(txtCijena, null);
+            }
+        }
     }
 }

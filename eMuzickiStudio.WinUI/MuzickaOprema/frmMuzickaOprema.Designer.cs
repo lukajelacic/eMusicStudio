@@ -33,7 +33,6 @@
             this.txtNaziv = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtBrojNaStanju = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvMuzickaOprema = new System.Windows.Forms.DataGridView();
             this.MuzickaOpremaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,12 +48,15 @@
             this.txtSlika = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtCijena = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtBrojNaStanju = new System.Windows.Forms.NumericUpDown();
+            this.txtCijena = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMuzickaOprema)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBrojNaStanju)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCijena)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -95,15 +97,6 @@
             this.label4.Size = new System.Drawing.Size(95, 17);
             this.label4.TabIndex = 9;
             this.label4.Text = "Broj na stanju";
-            // 
-            // txtBrojNaStanju
-            // 
-            this.txtBrojNaStanju.Location = new System.Drawing.Point(188, 110);
-            this.txtBrojNaStanju.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBrojNaStanju.Name = "txtBrojNaStanju";
-            this.txtBrojNaStanju.Size = new System.Drawing.Size(236, 22);
-            this.txtBrojNaStanju.TabIndex = 8;
-            this.txtBrojNaStanju.Validating += new System.ComponentModel.CancelEventHandler(this.txtBrojNaStanju_Validating);
             // 
             // pictureBox1
             // 
@@ -261,26 +254,69 @@
             this.label6.TabIndex = 17;
             this.label6.Text = "Cijena";
             // 
-            // txtCijena
-            // 
-            this.txtCijena.Location = new System.Drawing.Point(188, 142);
-            this.txtCijena.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCijena.Name = "txtCijena";
-            this.txtCijena.Size = new System.Drawing.Size(236, 22);
-            this.txtCijena.TabIndex = 16;
-            this.txtCijena.Validating += new System.ComponentModel.CancelEventHandler(this.txtCijena_Validating);
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // txtBrojNaStanju
+            // 
+            this.txtBrojNaStanju.Location = new System.Drawing.Point(188, 113);
+            this.txtBrojNaStanju.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.txtBrojNaStanju.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtBrojNaStanju.Name = "txtBrojNaStanju";
+            this.txtBrojNaStanju.Size = new System.Drawing.Size(236, 22);
+            this.txtBrojNaStanju.TabIndex = 18;
+            this.txtBrojNaStanju.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtBrojNaStanju.Validating += new System.ComponentModel.CancelEventHandler(this.txtBrojNaStanju_Validating_1);
+            // 
+            // txtCijena
+            // 
+            this.txtCijena.Increment = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.txtCijena.Location = new System.Drawing.Point(188, 142);
+            this.txtCijena.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.txtCijena.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtCijena.Name = "txtCijena";
+            this.txtCijena.Size = new System.Drawing.Size(237, 22);
+            this.txtCijena.TabIndex = 19;
+            this.txtCijena.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.txtCijena.Validating += new System.ComponentModel.CancelEventHandler(this.txtCijena_Validating_1);
             // 
             // frmMuzickaOprema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 554);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.txtCijena);
+            this.Controls.Add(this.txtBrojNaStanju);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.txtSlika);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnDodajSliku);
@@ -288,7 +324,6 @@
             this.Controls.Add(this.cmbVrsta);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtBrojNaStanju);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNaziv);
             this.Controls.Add(this.label1);
@@ -305,6 +340,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvMuzickaOprema)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBrojNaStanju)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCijena)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,7 +352,6 @@
         private System.Windows.Forms.TextBox txtNaziv;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtBrojNaStanju;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dgvMuzickaOprema;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -326,12 +362,13 @@
         private System.Windows.Forms.TextBox txtSlika;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtCijena;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MuzickaOpremaId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ocjena;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cijena;
         private System.Windows.Forms.DataGridViewTextBoxColumn NaStanju;
+        private System.Windows.Forms.NumericUpDown txtCijena;
+        private System.Windows.Forms.NumericUpDown txtBrojNaStanju;
     }
 }
