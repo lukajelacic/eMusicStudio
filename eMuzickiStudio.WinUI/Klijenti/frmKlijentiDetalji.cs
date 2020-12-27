@@ -141,7 +141,7 @@ namespace eMuzickiStudio.WinUI.Klijenti
 
         private void txtPrezime_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtPrezime.Text) | txtPrezime.Text.Length<4)
+            if (string.IsNullOrWhiteSpace(txtPrezime.Text) || txtPrezime.Text.Length<4)
             {
                 errorProvider.SetError(txtPrezime, Properties.Resources.Validation_RequiredField);
                 e.Cancel = true;

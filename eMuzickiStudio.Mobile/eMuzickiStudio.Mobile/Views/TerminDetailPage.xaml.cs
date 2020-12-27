@@ -17,7 +17,7 @@ namespace eMuzickiStudio.Mobile.Views
         public TerminDetailPage(Model.Termini termin)
         {
             InitializeComponent();
-            BindingContext = model = new TerminDetailViewModel()
+            BindingContext = model = new TerminDetailViewModel(this.Navigation)
             {
                 Termin = termin
             };
