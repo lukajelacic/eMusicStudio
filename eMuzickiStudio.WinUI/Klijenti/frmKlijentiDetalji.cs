@@ -176,7 +176,7 @@ namespace eMuzickiStudio.WinUI.Klijenti
 
         private async void txtKorisnickoIme_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtKorisnickoIme.Text) && txtKorisnickoIme.Text.Length<4)
+            if (string.IsNullOrWhiteSpace(txtKorisnickoIme.Text) || txtKorisnickoIme.Text.Length<4)
             {
                 errorProvider.SetError(txtKorisnickoIme, Properties.Resources.Validation_RequiredField);
                 e.Cancel = true;
